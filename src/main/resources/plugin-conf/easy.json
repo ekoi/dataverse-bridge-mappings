@@ -1,0 +1,41 @@
+{
+  "dar-name": "EASY",
+  "dar-iri":"${easy.dar.iri}",
+  "action-class-name": "${easy.plugin.action.class.name}",
+  "action-class-url": "${easy.plugin.action.class.url}",
+  "xsl": [{
+    "source": "dataverse",
+    "transformer": [
+      {
+        "xsl-name": "dataset.xml",
+        "xsl-url": "${xsl.base.url}/dataverse/dataverseJson-to-easy-dataset.xsl"
+      },
+      {
+        "xsl-name": "files.xml",
+        "xsl-url": "${xsl.base.url}/dataverse/dataverseJson-to-easy-files.xsl"
+      },
+      {
+        "xsl-name": "source-files-location",
+        "xsl-url": "${xsl.base.url}/dataverse/dataverseJson-to-files-location.xsl"
+      }
+    ]
+  },
+    {
+      "source": "b2share",
+      "transformer": [
+        {
+          "xsl-name": "dataset.xml",
+          "xsl-url": "${xsl.base.url}/b2share/b2shareJson-to-easy-dataset.xsl"
+        },
+        {
+          "xsl-name": "files.xml",
+          "xsl-url": "${xsl.base.url}/b2share/b2shareJson-to-easy-files.xsl"
+        },
+        {
+          "xsl-name": "source-files-location",
+          "xsl-url": "${xsl.base.url}/b2share/b2shareJson-to-files-location.xsl"
+        }
+      ]
+    }
+  ]
+}

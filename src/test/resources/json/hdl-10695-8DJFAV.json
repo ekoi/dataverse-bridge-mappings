@@ -1,0 +1,384 @@
+{
+    "id": 7119,
+    "identifier": "8DJFAV",
+    "persistentUrl": "https://hdl.handle.net/10695/8DJFAV",
+    "protocol": "hdl",
+    "authority": "10695",
+    "publisher": "DataverseNL",
+    "publicationDate": "2018-10-17",
+    "datasetVersion": {
+        "id": 1980,
+        "versionNumber": 3,
+        "versionMinorNumber": 0,
+        "versionState": "RELEASED",
+        "productionDate": "Production Date",
+        "lastUpdateTime": "2018-10-18T13:32:00Z",
+        "releaseTime": "2018-10-18T13:32:00Z",
+        "createTime": "2018-10-18T13:31:45Z",
+        "license": "CC0",
+        "termsOfUse": "CC0 Waiver",
+        "metadataBlocks": {"citation": {
+            "displayName": "Citation Metadata",
+            "fields": [
+                {
+                    "typeName": "title",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Test dataset to test SWORD functionality Dataverse to EASY"
+                },
+                {
+                    "typeName": "subtitle",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "A first test."
+                },
+                {
+                    "typeName": "alternativeTitle",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "A test, the first."
+                },
+                {
+                    "typeName": "otherId",
+                    "multiple": true,
+                    "typeClass": "compound",
+                    "value": [{
+                        "otherIdAgency": {
+                            "typeName": "otherIdAgency",
+                            "multiple": false,
+                            "typeClass": "primitive",
+                            "value": "Numbers"
+                        },
+                        "otherIdValue": {
+                            "typeName": "otherIdValue",
+                            "multiple": false,
+                            "typeClass": "primitive",
+                            "value": "12345"
+                        }
+                    }]
+                },
+                {
+                    "typeName": "author",
+                    "multiple": true,
+                    "typeClass": "compound",
+                    "value": [
+                        {
+                            "authorName": {
+                                "typeName": "authorName",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "Utrecht, UB"
+                            },
+                            "authorAffiliation": {
+                                "typeName": "authorAffiliation",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "Utrecht University"
+                            }
+                        },
+                        {
+                            "authorName": {
+                                "typeName": "authorName",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "De Roy van Zuydewijn, Iemand"
+                            },
+                            "authorAffiliation": {
+                                "typeName": "authorAffiliation",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "Universiteit Utrecht"
+                            }
+                        },
+                        {
+                            "authorName": {
+                                "typeName": "authorName",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "Jansen, A. B. C. D. E."
+                            },
+                            "authorAffiliation": {
+                                "typeName": "authorAffiliation",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "UMC Utrecht"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "typeName": "datasetContact",
+                    "multiple": true,
+                    "typeClass": "compound",
+                    "value": [{
+                        "datasetContactName": {
+                            "typeName": "datasetContactName",
+                            "multiple": false,
+                            "typeClass": "primitive",
+                            "value": "Utrecht, UB"
+                        },
+                        "datasetContactAffiliation": {
+                            "typeName": "datasetContactAffiliation",
+                            "multiple": false,
+                            "typeClass": "primitive",
+                            "value": "UU"
+                        }
+                    }]
+                },
+                {
+                    "typeName": "dsDescription",
+                    "multiple": true,
+                    "typeClass": "compound",
+                    "value": [
+                        {
+                            "dsDescriptionValue": {
+                                "typeName": "dsDescriptionValue",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "Description1: All data and metadata should be the same in DataverseNL and EASY."
+                            },
+                            "dsDescriptionDate": {
+                                "typeName": "dsDescriptionDate",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "2018-10-17"
+                            }
+                        },
+                        {
+                            "dsDescriptionValue": {
+                                "typeName": "dsDescriptionValue",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "Description2: Will both descriptions be moved to EASY?"
+                            },
+                            "dsDescriptionDate": {
+                                "typeName": "dsDescriptionDate",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "2018-10-16"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "typeName": "subject",
+                    "multiple": true,
+                    "typeClass": "controlledVocabulary",
+                    "value": ["Business and Management"]
+                },
+                {
+                    "typeName": "keyword",
+                    "multiple": true,
+                    "typeClass": "compound",
+                    "value": [{"keywordValue": {
+                        "typeName": "keywordValue",
+                        "multiple": false,
+                        "typeClass": "primitive",
+                        "value": "Other, Miscellaneous; Varia"
+                    }}]
+                },
+                {
+                    "typeName": "notesText",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Test notes for this dataset"
+                },
+                {
+                    "typeName": "language",
+                    "multiple": true,
+                    "typeClass": "controlledVocabulary",
+                    "value": [
+                        "Dutch",
+                        "English"
+                    ]
+                },
+                {
+                    "typeName": "productionPlace",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Utrecht, The Netherlands"
+                },
+                {
+                    "typeName": "depositor",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Utrecht, UB"
+                },
+                {
+                    "typeName": "dateOfDeposit",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "2018-10-17"
+                },
+                {
+                    "typeName": "kindOfData",
+                    "multiple": true,
+                    "typeClass": "primitive",
+                    "value": ["Test data"]
+                },
+                {
+                    "typeName": "software",
+                    "multiple": true,
+                    "typeClass": "compound",
+                    "value": [{
+                        "softwareName": {
+                            "typeName": "softwareName",
+                            "multiple": false,
+                            "typeClass": "primitive",
+                            "value": "SWORD"
+                        },
+                        "softwareVersion": {
+                            "typeName": "softwareVersion",
+                            "multiple": false,
+                            "typeClass": "primitive",
+                            "value": "0.9"
+                        }
+                    }]
+                },
+                {
+                    "typeName": "relatedMaterial",
+                    "multiple": true,
+                    "typeClass": "primitive",
+                    "value": ["TEST"]
+                },
+                {
+                    "typeName": "relatedDatasets",
+                    "multiple": true,
+                    "typeClass": "primitive",
+                    "value": ["TEST"]
+                },
+                {
+                    "typeName": "otherReferences",
+                    "multiple": true,
+                    "typeClass": "primitive",
+                    "value": ["TEST"]
+                },
+                {
+                    "typeName": "dataSources",
+                    "multiple": true,
+                    "typeClass": "primitive",
+                    "value": ["TEST"]
+                },
+                {
+                    "typeName": "originOfSources",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "TEST"
+                },
+                {
+                    "typeName": "characteristicOfSources",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "TEST"
+                },
+                {
+                    "typeName": "accessToSources",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "TEST"
+                }
+            ]
+        }},
+        "files": [
+            {
+                "description": "free snack to create version2",
+                "label": "Free_dougnut_10.png",
+                "restricted": false,
+                "version": 1,
+                "datasetVersionId": 1980,
+                "categories": [
+                    "pic",
+                    "testing"
+                ],
+                "dataFile": {
+                    "id": 7122,
+                    "filename": "Free_dougnut_10.png",
+                    "contentType": "image/png",
+                    "filesize": 26799,
+                    "description": "free snack to create version2",
+                    "storageIdentifier": "16686ee94c6-7909e1514bac",
+                    "originalFormatLabel": "UNKNOWN",
+                    "rootDataFileId": -1,
+                    "md5": "f809bdf0d6f05ead374b9182034bfc47",
+                    "checksum": {
+                        "type": "MD5",
+                        "value": "f809bdf0d6f05ead374b9182034bfc47"
+                    }
+                }
+            },
+            {
+                "label": "Non_preferred_format.xlsx",
+                "restricted": false,
+                "version": 1,
+                "datasetVersionId": 1980,
+                "dataFile": {
+                    "id": 7123,
+                    "filename": "Non_preferred_format.xlsx",
+                    "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "filesize": 9348,
+                    "storageIdentifier": "166875fefee-263b0a282178",
+                    "originalFormatLabel": "UNKNOWN",
+                    "rootDataFileId": -1,
+                    "md5": "fa2fa7f7b14df8e70066b5f60e2296ef",
+                    "checksum": {
+                        "type": "MD5",
+                        "value": "fa2fa7f7b14df8e70066b5f60e2296ef"
+                    }
+                }
+            },
+            {
+                "description": "Test sheet file to test SWORD",
+                "label": "SWORD_testscript_test_sheet.ods",
+                "restricted": false,
+                "version": 1,
+                "datasetVersionId": 1980,
+                "categories": [
+                    "Data",
+                    "testing"
+                ],
+                "dataFile": {
+                    "id": 7120,
+                    "filename": "SWORD_testscript_test_sheet.ods",
+                    "contentType": "application/vnd.oasis.opendocument.spreadsheet",
+                    "filesize": 3717,
+                    "description": "Test sheet file to test SWORD",
+                    "storageIdentifier": "166823cd088-a75be321b3c5",
+                    "originalFormatLabel": "UNKNOWN",
+                    "rootDataFileId": -1,
+                    "md5": "e51e2ec629bce43024ff6f8762dec28d",
+                    "checksum": {
+                        "type": "MD5",
+                        "value": "e51e2ec629bce43024ff6f8762dec28d"
+                    }
+                }
+            },
+            {
+                "description": "Text file to test",
+                "label": "TEST_file_from_DataverseNL_to_DANS-EASY.odt",
+                "restricted": false,
+                "version": 1,
+                "datasetVersionId": 1980,
+                "categories": [
+                    "Documentation",
+                    "testing"
+                ],
+                "dataFile": {
+                    "id": 7121,
+                    "filename": "TEST_file_from_DataverseNL_to_DANS-EASY.odt",
+                    "contentType": "application/vnd.oasis.opendocument.text",
+                    "filesize": 6092,
+                    "description": "Text file to test",
+                    "storageIdentifier": "166823cd2fa-4746df70e598",
+                    "originalFormatLabel": "UNKNOWN",
+                    "rootDataFileId": -1,
+                    "md5": "cf9fe28cb004ad99bd37f3c90aa7def2",
+                    "checksum": {
+                        "type": "MD5",
+                        "value": "cf9fe28cb004ad99bd37f3c90aa7def2"
+                    }
+                }
+            }
+        ],
+        "citation": "Utrecht, UB; De Roy van Zuydewijn, Iemand; Jansen, A. B. C. D. E., 2018, \"Test dataset to test SWORD functionality Dataverse to EASY\", https://hdl.handle.net/10695/8DJFAV, DataverseNL, V3"
+    }
+}

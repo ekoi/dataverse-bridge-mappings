@@ -1,0 +1,286 @@
+{
+    "id": 7108,
+    "identifier": "CF1PYG",
+    "persistentUrl": "https://hdl.handle.net/10695/CF1PYG",
+    "protocol": "hdl",
+    "authority": "10695",
+    "publisher": "DataverseNL",
+    "publicationDate": "2018-10-02",
+    "datasetVersion": {
+        "id": 1997,
+        "versionNumber": 2,
+        "versionMinorNumber": 4,
+        "versionState": "RELEASED",
+        "productionDate": "Production Date",
+        "lastUpdateTime": "2018-11-06T13:02:43Z",
+        "releaseTime": "2018-11-06T13:02:43Z",
+        "createTime": "2018-11-06T13:02:33Z",
+        "license": "NONE",
+        "termsOfUse": "Terms of Use - CC-BY",
+        "termsOfAccess": "terms of access",
+        "metadataBlocks": {
+            "citation": {
+                "displayName": "Citation Metadata",
+                "fields": [
+                    {
+                        "typeName": "title",
+                        "multiple": false,
+                        "typeClass": "primitive",
+                        "value": "SWORD demo account test"
+                    },
+                    {
+                        "typeName": "author",
+                        "multiple": true,
+                        "typeClass": "compound",
+                        "value": [{
+                            "authorName": {
+                                "typeName": "authorName",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "Huisintveld, Laura"
+                            },
+                            "authorAffiliation": {
+                                "typeName": "authorAffiliation",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "DANS"
+                            },
+                            "authorIdentifierScheme": {
+                                "typeName": "authorIdentifierScheme",
+                                "multiple": false,
+                                "typeClass": "controlledVocabulary",
+                                "value": "ORCID"
+                            },
+                            "authorIdentifier": {
+                                "typeName": "authorIdentifier",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "00001234567890"
+                            }
+                        }]
+                    },
+                    {
+                        "typeName": "datasetContact",
+                        "multiple": true,
+                        "typeClass": "compound",
+                        "value": [{
+                            "datasetContactName": {
+                                "typeName": "datasetContactName",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "Huisintveld, Laura"
+                            },
+                            "datasetContactAffiliation": {
+                                "typeName": "datasetContactAffiliation",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "DANS"
+                            }
+                        }]
+                    },
+                    {
+                        "typeName": "dsDescription",
+                        "multiple": true,
+                        "typeClass": "compound",
+                        "value": [{"dsDescriptionValue": {
+                            "typeName": "dsDescriptionValue",
+                            "multiple": false,
+                            "typeClass": "primitive",
+                            "value": "Description- abstract-summary"
+                        }}]
+                    },
+                    {
+                        "typeName": "subject",
+                        "multiple": true,
+                        "typeClass": "controlledVocabulary",
+                        "value": ["Arts and Humanities"]
+                    },
+                    {
+                        "typeName": "keyword",
+                        "multiple": true,
+                        "typeClass": "compound",
+                        "value": [
+                            {"keywordValue": {
+                                "typeName": "keywordValue",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "Demo"
+                            }},
+                            {"keywordValue": {
+                                "typeName": "keywordValue",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "Test"
+                            }}
+                        ]
+                    },
+                    {
+                        "typeName": "language",
+                        "multiple": true,
+                        "typeClass": "controlledVocabulary",
+                        "value": ["Tatar"]
+                    },
+                    {
+                        "typeName": "contributor",
+                        "multiple": true,
+                        "typeClass": "compound",
+                        "value": [{"contributorType": {
+                            "typeName": "contributorType",
+                            "multiple": false,
+                            "typeClass": "controlledVocabulary",
+                            "value": "Data Manager"
+                        }}]
+                    },
+                    {
+                        "typeName": "depositor",
+                        "multiple": false,
+                        "typeClass": "primitive",
+                        "value": "Huisintveld, Laura"
+                    },
+                    {
+                        "typeName": "dateOfDeposit",
+                        "multiple": false,
+                        "typeClass": "primitive",
+                        "value": "2018-10-02"
+                    }
+                ]
+            },
+            "geospatial": {
+                "displayName": "Geospatial Metadata",
+                "fields": [
+                    {
+                        "typeName": "geographicCoverage",
+                        "multiple": true,
+                        "typeClass": "compound",
+                        "value": [{
+                            "country": {
+                                "typeName": "country",
+                                "multiple": false,
+                                "typeClass": "controlledVocabulary",
+                                "value": "Bahamas"
+                            },
+                            "state": {
+                                "typeName": "state",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "Provincie1"
+                            },
+                            "city": {
+                                "typeName": "city",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "Antwerpen"
+                            },
+                            "otherGeographicCoverage": {
+                                "typeName": "otherGeographicCoverage",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "Anders?"
+                            }
+                        }]
+                    },
+                    {
+                        "typeName": "geographicUnit",
+                        "multiple": true,
+                        "typeClass": "primitive",
+                        "value": ["geographic unit - Village"]
+                    },
+                    {
+                        "typeName": "geographicBoundingBox",
+                        "multiple": true,
+                        "typeClass": "compound",
+                        "value": [{
+                            "westLongitude": {
+                                "typeName": "westLongitude",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "1111"
+                            },
+                            "eastLongitude": {
+                                "typeName": "eastLongitude",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "2222"
+                            },
+                            "northLongitude": {
+                                "typeName": "northLongitude",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "3333"
+                            },
+                            "southLongitude": {
+                                "typeName": "southLongitude",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "4444"
+                            }
+                        }]
+                    }
+                ]
+            }
+        },
+        "files": [
+            {
+                "label": "1_NARCIS_logo.png",
+                "restricted": true,
+                "version": 1,
+                "datasetVersionId": 1997,
+                "dataFile": {
+                    "id": 7137,
+                    "filename": "1_NARCIS_logo.png",
+                    "contentType": "image/png",
+                    "filesize": 5248,
+                    "storageIdentifier": "166d3ddd382-162c0ecf2c85",
+                    "originalFormatLabel": "UNKNOWN",
+                    "rootDataFileId": -1,
+                    "md5": "f1c48d62def2d26f7399b00e12d3d62a",
+                    "checksum": {
+                        "type": "MD5",
+                        "value": "f1c48d62def2d26f7399b00e12d3d62a"
+                    }
+                }
+            },
+            {
+                "label": "2_Slovenian_file_not_uploaded.png",
+                "restricted": true,
+                "version": 1,
+                "datasetVersionId": 1997,
+                "dataFile": {
+                    "id": 7138,
+                    "filename": "2_Slovenian_file_not_uploaded.png",
+                    "contentType": "image/png",
+                    "filesize": 42594,
+                    "storageIdentifier": "166d3dfe2a7-c2753648dc90",
+                    "originalFormatLabel": "UNKNOWN",
+                    "rootDataFileId": -1,
+                    "md5": "f99d3288f15d419484f6ad18efdcc2fe",
+                    "checksum": {
+                        "type": "MD5",
+                        "value": "f99d3288f15d419484f6ad18efdcc2fe"
+                    }
+                }
+            },
+            {
+                "label": "3_Slovenian_question_not_translated.png",
+                "restricted": false,
+                "version": 1,
+                "datasetVersionId": 1997,
+                "dataFile": {
+                    "id": 7109,
+                    "filename": "3_Slovenian_question_not_translated.png",
+                    "contentType": "image/png",
+                    "filesize": 21205,
+                    "storageIdentifier": "16634cfadc7-41d5dde379c4",
+                    "originalFormatLabel": "UNKNOWN",
+                    "rootDataFileId": -1,
+                    "md5": "8b5dcb3dd6eb6c515e21de0e95ad6103",
+                    "checksum": {
+                        "type": "MD5",
+                        "value": "8b5dcb3dd6eb6c515e21de0e95ad6103"
+                    }
+                }
+            }
+        ],
+        "citation": "Huisintveld, Laura, 2018, \"SWORD demo account test\", https://hdl.handle.net/10695/CF1PYG, DataverseNL, V2"
+    }
+}

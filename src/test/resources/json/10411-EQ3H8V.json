@@ -1,0 +1,511 @@
+{
+    "id": 12246,
+    "identifier": "EQ3H8V",
+    "persistentUrl": "https://hdl.handle.net/10411/EQ3H8V",
+    "protocol": "hdl",
+    "authority": "10411",
+    "publisher": "DataverseNL",
+    "publicationDate": "2018-11-02",
+    "datasetVersion": {
+        "id": 1401,
+        "versionNumber": 1,
+        "versionMinorNumber": 0,
+        "versionState": "RELEASED",
+        "distributionDate": "2018",
+        "productionDate": "Production Date",
+        "lastUpdateTime": "2018-11-02T08:29:47Z",
+        "releaseTime": "2018-11-02T08:29:47Z",
+        "createTime": "2018-10-23T08:57:18Z",
+        "license": "CC0",
+        "termsOfUse": "CC0 Waiver",
+        "metadataBlocks": {"citation": {
+            "displayName": "Citation Metadata",
+            "fields": [
+                {
+                    "typeName": "title",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Replication Data for: Cognitive-behavior therapy for children and adolescents with anxiety disorders: a meta-analysis of secondary outcomes"
+                },
+                {
+                    "typeName": "author",
+                    "multiple": true,
+                    "typeClass": "compound",
+                    "value": [
+                        {
+                            "authorName": {
+                                "typeName": "authorName",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "Kreuze, L.J."
+                            },
+                            "authorAffiliation": {
+                                "typeName": "authorAffiliation",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "University of Groningen"
+                            }
+                        },
+                        {
+                            "authorName": {
+                                "typeName": "authorName",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "Pijnenborg, G.H.M."
+                            },
+                            "authorAffiliation": {
+                                "typeName": "authorAffiliation",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "University of Groningen"
+                            }
+                        },
+                        {
+                            "authorName": {
+                                "typeName": "authorName",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "de Jonge, Y.B."
+                            },
+                            "authorAffiliation": {
+                                "typeName": "authorAffiliation",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "University of Groningen"
+                            }
+                        },
+                        {
+                            "authorName": {
+                                "typeName": "authorName",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "Nauta, M.H."
+                            },
+                            "authorAffiliation": {
+                                "typeName": "authorAffiliation",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "University of Groningen"
+                            },
+                            "authorIdentifierScheme": {
+                                "typeName": "authorIdentifierScheme",
+                                "multiple": false,
+                                "typeClass": "controlledVocabulary",
+                                "value": "ORCID"
+                            },
+                            "authorIdentifier": {
+                                "typeName": "authorIdentifier",
+                                "multiple": false,
+                                "typeClass": "primitive",
+                                "value": "https://orcid.org/0000-0001-7694-1382"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "typeName": "datasetContact",
+                    "multiple": true,
+                    "typeClass": "compound",
+                    "value": [{
+                        "datasetContactName": {
+                            "typeName": "datasetContactName",
+                            "multiple": false,
+                            "typeClass": "primitive",
+                            "value": "Reseaerch Data Office"
+                        },
+                        "datasetContactAffiliation": {
+                            "typeName": "datasetContactAffiliation",
+                            "multiple": false,
+                            "typeClass": "primitive",
+                            "value": "University of Groningen"
+                        }
+                    }]
+                },
+                {
+                    "typeName": "dsDescription",
+                    "multiple": true,
+                    "typeClass": "compound",
+                    "value": [{
+                        "dsDescriptionValue": {
+                            "typeName": "dsDescriptionValue",
+                            "multiple": false,
+                            "typeClass": "primitive",
+                            "value": "Anxiety-focused cognitive-behavioral therapy (CBT) effectively reduces anxiety in children and adolescents. An important remaining question is to what extent anxiety-focused CBT also affects broader outcome domains. Additionally, it remains unclear whether parental involvement in treatment may have impact on domains other than anxiety. A meta-analysis (nstudies=42, nparticipants=3239) of the effects of CBT and the moderating role of parental involvement was conducted on the following major secondary outcomes: depressive symptoms, externalizing behaviors, general functioning, and social competence. Randomized controlled trials were included when having a waitlist or active control condition, a youth sample (aged<19) with a primary anxiety disorder diagnosis receiving anxiety-focused CBT and reported secondary outcomes. Controlled effect sizes (Cohen\u2019s d) were calculated employing random effect models. CBT had a large effect on general functioning (-1.25[-1.59;0.90], nstudies=17), a small to moderate effect on depressive symptoms (-0.31[-0.41;-0.22], nstudies=31) and a small effect on externalizing behaviors (-0.23[-0.38;-0.09], nstudies=12) from pre-to post-treatment. Effects remained or even further improved at follow-up. Social competence only improved at follow-up (nstudies = 6). Concluding, anxiety-focused CBT has a positive effect on broader outcome domains than just anxiety. Higher parental involvement seemed to have beneficial effects at follow-up, with improvements in general functioning and comorbid symptoms."
+                        },
+                        "dsDescriptionDate": {
+                            "typeName": "dsDescriptionDate",
+                            "multiple": false,
+                            "typeClass": "primitive",
+                            "value": "2018-10-23"
+                        }
+                    }]
+                },
+                {
+                    "typeName": "subject",
+                    "multiple": true,
+                    "typeClass": "controlledVocabulary",
+                    "value": ["Social Sciences"]
+                },
+                {
+                    "typeName": "keyword",
+                    "multiple": true,
+                    "typeClass": "compound",
+                    "value": [
+                        {"keywordValue": {
+                            "typeName": "keywordValue",
+                            "multiple": false,
+                            "typeClass": "primitive",
+                            "value": "CBT"
+                        }},
+                        {"keywordValue": {
+                            "typeName": "keywordValue",
+                            "multiple": false,
+                            "typeClass": "primitive",
+                            "value": "Anxiety disorder"
+                        }},
+                        {"keywordValue": {
+                            "typeName": "keywordValue",
+                            "multiple": false,
+                            "typeClass": "primitive",
+                            "value": "Children"
+                        }},
+                        {"keywordValue": {
+                            "typeName": "keywordValue",
+                            "multiple": false,
+                            "typeClass": "primitive",
+                            "value": "Meta-analysis"
+                        }},
+                        {"keywordValue": {
+                            "typeName": "keywordValue",
+                            "multiple": false,
+                            "typeClass": "primitive",
+                            "value": "Secondary outcomes"
+                        }},
+                        {"keywordValue": {
+                            "typeName": "keywordValue",
+                            "multiple": false,
+                            "typeClass": "primitive",
+                            "value": "Depressive symptoms"
+                        }},
+                        {"keywordValue": {
+                            "typeName": "keywordValue",
+                            "multiple": false,
+                            "typeClass": "primitive",
+                            "value": "Externalizing behaviors"
+                        }},
+                        {"keywordValue": {
+                            "typeName": "keywordValue",
+                            "multiple": false,
+                            "typeClass": "primitive",
+                            "value": "General functioning"
+                        }},
+                        {"keywordValue": {
+                            "typeName": "keywordValue",
+                            "multiple": false,
+                            "typeClass": "primitive",
+                            "value": "Social competence"
+                        }}
+                    ]
+                },
+                {
+                    "typeName": "notesText",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "A combined search in the PsychInfo and Medline databases was performed on the 15th of July 2016. The search consisted of a combination of terms, thesaurus terms and synonyms for the two main factors in the research question, namely, \u201canxiety disorders\u201d and \u201cintervention\u201d, and were based on keywords in already-identified articles, words in guidelines and expert suggestions: \"anx*\" OR \"phobi*\" OR \"agora\" OR \u201cpanic disor*\u201d OR \"overanxious\" OR \"avoidant disorder\" AND \u201cpsychotherapy\u201d OR \u201cbehavior therapy\u201d OR \u201ccognitive therapy\u201d OR \u201cpsychologic desensitization\u201d OR relaxation therapy\u201d OR \u201cparent training\u201d OR \u201cCBT\u201d OR cognitive behaviour therapy\u201d OR \u201ccognitive behavioral therapy\u201d OR \u201cbehavior therapy\u201d OR \u201ctreatment\u201d. \r\nLimiters in the advanced search option were used to search for published English language, peer-reviewed studies including children and adolescents (age < 19). Additionally, reference lists of recent meta-analyses were checked for eligible articles.\r\n Procedure\r\nThe selection process for inclusion in the meta-analysis consisted of a two-stepped    approach. For the first step, each study had to meet the following criteria.\r\n    a. Randomized controlled trial including a waitlist, care as usual, pill placebo, or attention placebo condition\r\n    b. Used an anxiety-focused CBT\r\n    c. Participants were children and adolescents (aged<19) with a primary anxiety disorder diagnosis\r\n    d. Baseline and post-treatment data reported for any secondary outcome measure with regard to comorbid symptoms and general, social, academic and family functioning.\r\nFor further information, read the file readme.pdf."
+                },
+                {
+                    "typeName": "language",
+                    "multiple": true,
+                    "typeClass": "controlledVocabulary",
+                    "value": ["English"]
+                },
+                {
+                    "typeName": "productionPlace",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Groningen"
+                },
+                {
+                    "typeName": "distributor",
+                    "multiple": true,
+                    "typeClass": "compound",
+                    "value": [{"distributorName": {
+                        "typeName": "distributorName",
+                        "multiple": false,
+                        "typeClass": "primitive",
+                        "value": "University of Groningen"
+                    }}]
+                },
+                {
+                    "typeName": "distributionDate",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "2018"
+                },
+                {
+                    "typeName": "depositor",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "Elsenga, Christina"
+                },
+                {
+                    "typeName": "dateOfDeposit",
+                    "multiple": false,
+                    "typeClass": "primitive",
+                    "value": "2018-10-23"
+                },
+                {
+                    "typeName": "dataSources",
+                    "multiple": true,
+                    "typeClass": "primitive",
+                    "value": ["PsychInfo and Medline databases"]
+                }
+            ]
+        }},
+        "files": [
+            {
+                "label": "anxiety_data_post_fu.xlsx",
+                "restricted": true,
+                "version": 1,
+                "datasetVersionId": 1401,
+                "dataFile": {
+                    "id": 12250,
+                    "filename": "anxiety_data_post_fu.xlsx",
+                    "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "filesize": 43316,
+                    "storageIdentifier": "166a5bc5502-746a96ca12ef",
+                    "originalFormatLabel": "UNKNOWN",
+                    "rootDataFileId": -1,
+                    "md5": "5bbb537a56974b3afd3fe362321766b7",
+                    "checksum": {
+                        "type": "MD5",
+                        "value": "5bbb537a56974b3afd3fe362321766b7"
+                    }
+                }
+            },
+            {
+                "label": "anxiety_data_pre_post.xlsx",
+                "restricted": false,
+                "version": 1,
+                "datasetVersionId": 1401,
+                "dataFile": {
+                    "id": 12249,
+                    "filename": "anxiety_data_pre_post.xlsx",
+                    "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "filesize": 47347,
+                    "storageIdentifier": "166a5bc4050-6f5e8175d6d0",
+                    "originalFormatLabel": "UNKNOWN",
+                    "rootDataFileId": -1,
+                    "md5": "4ed7e87a0259678e3373ad8f70076fe8",
+                    "checksum": {
+                        "type": "MD5",
+                        "value": "4ed7e87a0259678e3373ad8f70076fe8"
+                    }
+                }
+            },
+            {
+                "label": "depression_data_post_fu.xlsx",
+                "restricted": false,
+                "version": 1,
+                "datasetVersionId": 1401,
+                "dataFile": {
+                    "id": 12252,
+                    "filename": "depression_data_post_fu.xlsx",
+                    "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "filesize": 38547,
+                    "storageIdentifier": "166a5bc7c48-a78853bd9a8f",
+                    "originalFormatLabel": "UNKNOWN",
+                    "rootDataFileId": -1,
+                    "md5": "f2993c7463497624383c76ea50e66362",
+                    "checksum": {
+                        "type": "MD5",
+                        "value": "f2993c7463497624383c76ea50e66362"
+                    }
+                }
+            },
+            {
+                "label": "depression_data_pre_post.xlsx",
+                "restricted": false,
+                "version": 1,
+                "datasetVersionId": 1401,
+                "dataFile": {
+                    "id": 12251,
+                    "filename": "depression_data_pre_post.xlsx",
+                    "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "filesize": 35468,
+                    "storageIdentifier": "166a5bc66d3-c9d1db6435f1",
+                    "originalFormatLabel": "UNKNOWN",
+                    "rootDataFileId": -1,
+                    "md5": "a160a3ac643a0174794cf152e2b56f20",
+                    "checksum": {
+                        "type": "MD5",
+                        "value": "a160a3ac643a0174794cf152e2b56f20"
+                    }
+                }
+            },
+            {
+                "label": "externalizing_data_post_fu.xlsx",
+                "restricted": false,
+                "version": 1,
+                "datasetVersionId": 1401,
+                "dataFile": {
+                    "id": 12254,
+                    "filename": "externalizing_data_post_fu.xlsx",
+                    "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "filesize": 31823,
+                    "storageIdentifier": "166a5bc9a27-57a634d69ade",
+                    "originalFormatLabel": "UNKNOWN",
+                    "rootDataFileId": -1,
+                    "md5": "5ca746db1140e6a738f65c0c18317ad2",
+                    "checksum": {
+                        "type": "MD5",
+                        "value": "5ca746db1140e6a738f65c0c18317ad2"
+                    }
+                }
+            },
+            {
+                "label": "externalizing_data_pre_post.xlsx",
+                "restricted": false,
+                "version": 1,
+                "datasetVersionId": 1401,
+                "dataFile": {
+                    "id": 12253,
+                    "filename": "externalizing_data_pre_post.xlsx",
+                    "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "filesize": 36118,
+                    "storageIdentifier": "166a5bc8ec0-b45eac84d04a",
+                    "originalFormatLabel": "UNKNOWN",
+                    "rootDataFileId": -1,
+                    "md5": "17ff566892f0447cce838530a09a97ac",
+                    "checksum": {
+                        "type": "MD5",
+                        "value": "17ff566892f0447cce838530a09a97ac"
+                    }
+                }
+            },
+            {
+                "label": "generalfunctioning_data_post_fu.xlsx",
+                "restricted": false,
+                "version": 1,
+                "datasetVersionId": 1401,
+                "dataFile": {
+                    "id": 12256,
+                    "filename": "generalfunctioning_data_post_fu.xlsx",
+                    "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "filesize": 28305,
+                    "storageIdentifier": "166a5bcaf7b-406e2d44d4eb",
+                    "originalFormatLabel": "UNKNOWN",
+                    "rootDataFileId": -1,
+                    "md5": "712299529f783d6a94c99313e6b12477",
+                    "checksum": {
+                        "type": "MD5",
+                        "value": "712299529f783d6a94c99313e6b12477"
+                    }
+                }
+            },
+            {
+                "label": "generalfunctioning_data_pre_post.xlsx",
+                "restricted": false,
+                "version": 1,
+                "datasetVersionId": 1401,
+                "dataFile": {
+                    "id": 12255,
+                    "filename": "generalfunctioning_data_pre_post.xlsx",
+                    "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "filesize": 32151,
+                    "storageIdentifier": "166a5bca506-85427865b876",
+                    "originalFormatLabel": "UNKNOWN",
+                    "rootDataFileId": -1,
+                    "md5": "f9492be930ef1d3c91b1f5c9d387aef1",
+                    "checksum": {
+                        "type": "MD5",
+                        "value": "f9492be930ef1d3c91b1f5c9d387aef1"
+                    }
+                }
+            },
+            {
+                "description": "analysis file for Review Manager 5.3",
+                "label": "meta_JAD_dataverse.rm5",
+                "restricted": false,
+                "version": 1,
+                "datasetVersionId": 1401,
+                "dataFile": {
+                    "id": 12259,
+                    "filename": "meta_JAD_dataverse.rm5",
+                    "contentType": "text/plain",
+                    "filesize": 499099,
+                    "description": "analysis file for Review Manager 5.3",
+                    "storageIdentifier": "166a5bd0349-718790af6aee",
+                    "originalFormatLabel": "UNKNOWN",
+                    "rootDataFileId": -1,
+                    "md5": "9c5599b73e4fd1a9f78927d475f86962",
+                    "checksum": {
+                        "type": "MD5",
+                        "value": "9c5599b73e4fd1a9f78927d475f86962"
+                    }
+                }
+            },
+            {
+                "label": "readme.pdf",
+                "restricted": true,
+                "version": 1,
+                "datasetVersionId": 1401,
+                "dataFile": {
+                    "id": 12247,
+                    "filename": "readme.pdf",
+                    "contentType": "application/pdf",
+                    "filesize": 369925,
+                    "storageIdentifier": "166a02ee8dc-160093827e24",
+                    "originalFormatLabel": "UNKNOWN",
+                    "rootDataFileId": -1,
+                    "md5": "e95ad71e90fa7bc811697a76a945ceac",
+                    "checksum": {
+                        "type": "MD5",
+                        "value": "e95ad71e90fa7bc811697a76a945ceac"
+                    }
+                }
+            },
+            {
+                "label": "socialcompetence_data_pre_post.xlsx",
+                "restricted": false,
+                "version": 1,
+                "datasetVersionId": 1401,
+                "dataFile": {
+                    "id": 12257,
+                    "filename": "socialcompetence_data_pre_post.xlsx",
+                    "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "filesize": 32984,
+                    "storageIdentifier": "166a5bcba35-abe8af505dda",
+                    "originalFormatLabel": "UNKNOWN",
+                    "rootDataFileId": -1,
+                    "md5": "01a4874b73d75c7d900962c5a6400b3b",
+                    "checksum": {
+                        "type": "MD5",
+                        "value": "01a4874b73d75c7d900962c5a6400b3b"
+                    }
+                }
+            },
+            {
+                "label": "soicalcompetence_data_post_fu.xlsx",
+                "restricted": false,
+                "version": 1,
+                "datasetVersionId": 1401,
+                "dataFile": {
+                    "id": 12258,
+                    "filename": "soicalcompetence_data_post_fu.xlsx",
+                    "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "filesize": 30897,
+                    "storageIdentifier": "166a5bcc5b3-40cc0f9c385b",
+                    "originalFormatLabel": "UNKNOWN",
+                    "rootDataFileId": -1,
+                    "md5": "b35e4fa94ba1b2dcf3a938415701685a",
+                    "checksum": {
+                        "type": "MD5",
+                        "value": "b35e4fa94ba1b2dcf3a938415701685a"
+                    }
+                }
+            }
+        ],
+        "citation": "Kreuze, L.J.; Pijnenborg, G.H.M.; de Jonge, Y.B.; Nauta, M.H., 2018, \"Replication Data for: Cognitive-behavior therapy for children and adolescents with anxiety disorders: a meta-analysis of secondary outcomes\", https://hdl.handle.net/10411/EQ3H8V, DataverseNL, V1"
+    }
+}

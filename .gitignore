@@ -1,9 +1,12 @@
 # Compiled class file
 *.class
-
+.DS_Store
 # Log file
 *.log
-
+!dataverse-bridge.log
+!bridgedb.log
+*.idea
+*.iml
 # BlueJ files
 *.ctxt
 
@@ -12,12 +15,19 @@
 
 # Package Files #
 *.jar
+!bridge-plugin-easy-0.7-jar-with-dependencies.jar
 *.war
-*.nar
 *.ear
 *.zip
+!bridge-quickstart.zip
 *.tar.gz
 *.rar
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+target
+dist
+notes.txt
+*.properties
+*.tmp
+*.script
