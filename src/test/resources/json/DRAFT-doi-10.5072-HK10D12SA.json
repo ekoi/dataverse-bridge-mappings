@@ -1,0 +1,182 @@
+{
+  "status": "OK",
+  "data": {
+    "id": 19,
+    "identifier": "HK10D12SA",
+    "protocol": "doi",
+    "authority": "10.5072",
+    "storageIdentifier": "file://10.5072/HK10D12SA",
+    "versionState": "DRAFT",
+    "productionDate": "Production Date",
+    "lastUpdateTime": "2018-11-13T11:41:11Z",
+    "createTime": "2018-11-13T11:41:11Z",
+    "license": "CC0",
+    "termsOfUse": "CC0 Waiver",
+    "metadataBlocks": {"citation": {
+      "displayName": "Citation Metadata",
+      "fields": [
+        {
+          "typeName": "title",
+          "multiple": false,
+          "typeClass": "primitive",
+          "value": "Het klavertje dat steeds afbrak"
+        },
+        {
+          "typeName": "author",
+          "multiple": true,
+          "typeClass": "compound",
+          "value": [{
+            "authorName": {
+              "typeName": "authorName",
+              "multiple": false,
+              "typeClass": "primitive",
+              "value": "Admin, Dataverse"
+            },
+            "authorAffiliation": {
+              "typeName": "authorAffiliation",
+              "multiple": false,
+              "typeClass": "primitive",
+              "value": "Dataverse.org"
+            }
+          }]
+        },
+        {
+          "typeName": "datasetContact",
+          "multiple": true,
+          "typeClass": "compound",
+          "value": [{
+            "datasetContactName": {
+              "typeName": "datasetContactName",
+              "multiple": false,
+              "typeClass": "primitive",
+              "value": "Amal Indarto"
+            },
+            "datasetContactAffiliation": {
+              "typeName": "datasetContactAffiliation",
+              "multiple": false,
+              "typeClass": "primitive",
+              "value": "HKDSA"
+            },
+            "datasetContactEmail": {
+              "typeName": "datasetContactEmail",
+              "multiple": false,
+              "typeClass": "primitive",
+              "value": "khairunnisa@amalin.nl"
+            }
+          }]
+        },
+        {
+          "typeName": "dsDescription",
+          "multiple": true,
+          "typeClass": "compound",
+          "value": [{"dsDescriptionValue": {
+            "typeName": "dsDescriptionValue",
+            "multiple": false,
+            "typeClass": "primitive",
+            "value": "Florence, Rose, Stephany en Lucy zijn beste vriendinnen. Ze doen bijna alles samen. Vaak worden ze \u201chet klavertje van vier\u201d genoemd. Plotseling verdwijnt Lucy. Meteen leven Florence, Rose en Stephany in spanning en verdriet. Maar ze zijn niet van plan om het erbij te laten zitten. Ze gaan op onderzoek uit. Al snel gebeuren er vreselijke dingen en blijkt dat het helemaal geen goed idee is om op onderzoek uit te gaan. \r\nOf toch wel?"
+          }}]
+        },
+        {
+          "typeName": "subject",
+          "multiple": true,
+          "typeClass": "controlledVocabulary",
+          "value": ["Arts and Humanities"]
+        },
+        {
+          "typeName": "keyword",
+          "multiple": true,
+          "typeClass": "compound",
+          "value": [{
+            "keywordValue": {
+              "typeName": "keywordValue",
+              "multiple": false,
+              "typeClass": "primitive",
+              "value": "Family"
+            },
+            "keywordVocabulary": {
+              "typeName": "keywordVocabulary",
+              "multiple": false,
+              "typeClass": "primitive",
+              "value": "Family"
+            },
+            "keywordVocabularyURI": {
+              "typeName": "keywordVocabularyURI",
+              "multiple": false,
+              "typeClass": "primitive",
+              "value": "http://http://lod.cessda.eu/http://www.ddialliance.org/Specification/DDI-CV/AnalysisUnit#Family/1.0"
+            }
+          }]
+        },
+        {
+          "typeName": "publication",
+          "multiple": true,
+          "typeClass": "compound",
+          "value": [{"publicationCitation": {
+            "typeName": "publicationCitation",
+            "multiple": false,
+            "typeClass": "primitive",
+            "value": "Amal (12 jaar) houdt van lezen en schrijven. Zij schrijft zowel verhalen als gedichtjes. \r\nToen Amal in groep drie zat, werd ze leeskampioen van Eindhoven. Een jaar later verscheen haar eerste verhaaltje in de schoolkrant. Vanaf haar negende houdt ze haar eigen website bij, amalin.n"
+          }}]
+        },
+        {
+          "typeName": "depositor",
+          "multiple": false,
+          "typeClass": "primitive",
+          "value": "Admin, Dataverse"
+        },
+        {
+          "typeName": "dateOfDeposit",
+          "multiple": false,
+          "typeClass": "primitive",
+          "value": "2018-11-13"
+        }
+      ]
+    }},
+    "files": [
+      {
+        "label": "cover-achter.jpg",
+        "restricted": false,
+        "version": 1,
+        "datasetVersionId": 19,
+        "dataFile": {
+          "id": 16,
+          "persistentId": "",
+          "pidURL": "",
+          "filename": "cover-achter.jpg",
+          "contentType": "image/jpeg",
+          "filesize": 110918,
+          "storageIdentifier": "1670cdfc9e2-b99d56213b53",
+          "originalFormatLabel": "UNKNOWN",
+          "rootDataFileId": -1,
+          "md5": "f6c7fb34465e4c447e189c4be8668ac4",
+          "checksum": {
+            "type": "MD5",
+            "value": "f6c7fb34465e4c447e189c4be8668ac4"
+          }
+        }
+      },
+      {
+        "label": "cover-voor.jpg",
+        "restricted": false,
+        "version": 1,
+        "datasetVersionId": 19,
+        "dataFile": {
+          "id": 17,
+          "persistentId": "",
+          "pidURL": "",
+          "filename": "cover-voor.jpg",
+          "contentType": "image/jpeg",
+          "filesize": 86394,
+          "storageIdentifier": "1670ce00423-41020f66cdfd",
+          "originalFormatLabel": "UNKNOWN",
+          "rootDataFileId": -1,
+          "md5": "7c8218fd330921218425ea1341f521e2",
+          "checksum": {
+            "type": "MD5",
+            "value": "7c8218fd330921218425ea1341f521e2"
+          }
+        }
+      }
+    ]
+  }
+}
