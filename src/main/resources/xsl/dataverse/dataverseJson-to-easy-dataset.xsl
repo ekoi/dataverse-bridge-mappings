@@ -87,10 +87,6 @@
 
   <xsl:template name="dcmiMetadata">
     <ddm:dcmiMetadata>
-      <!-- TODO maybe add dcterms:rightsHolder ? -->
-      <!-- TODO maybe add dc:publisher ? -->
-      <!-- TODO maybe add dc:date ? -->
-      <!-- TODO maybe add dc:language ? -->
 
       <xsl:for-each select="/map/map/map[@key='metadataBlocks']/map[@key='citation']/array[@key='fields']/map/string[@key='typeName' and text()='language']/following-sibling::array[@key='value']/string/.">
         <dc:language>
@@ -107,34 +103,29 @@
         </dc:subject>
       </xsl:for-each>
 
-      <!--<ddm:additional-xml>-->
-        <!--<mods:recordInfo>-->
-            <!--<mods:recordOrigin><xsl:value-of select="/map/string[@key='publisher']/."/></mods:recordOrigin>-->
-        <!--</mods:recordInfo>-->
-      <!--</ddm:additional-xml>-->
+      <ddm:additional-xml>
+        <mods:recordInfo>
+            <mods:recordOrigin><xsl:value-of select="/map/string[@key='publisher']/."/></mods:recordOrigin>
+        </mods:recordInfo>
+      </ddm:additional-xml>
       <!-- Always a Dataset
             We cannot be more specific, but maybe Collection might be semantically better? -->
       <dc:type xsi:type="dcterms:DCMIType">Dataset</dc:type>
 
-      <!-- compile list of distinct file mime types -->
-      <!--TODO: EKO-->
-      <!--<xsl:for-each select="ddi:otherMat/ddi:notes[@level='file' and @subject='Content/MIME Type']">-->
-        <!--<xsl:if test="not(.=preceding::*)">-->
-          <!--&lt;!&ndash; as long as it is a true mime type we can add the dcterms:IMT &ndash;&gt;-->
-          <!--<dc:format xsi:type="dcterms:IMT"><xsl:value-of select="."/></dc:format>-->
-        <!--</xsl:if>-->
-      <!--</xsl:for-each>-->
 
       <!-- TODO would like to have the handle (pid) here, would be very strange not to have it.
           It points to the dataset in Dataverse which has all versions and not just the one deposited in EASY,
           also it might be just a tumbstone. -->
-      <ddm:isVersionOf>
+      <ddm:isFormatOf>
         <xsl:attribute name="href"><xsl:value-of select="/map/string[@key='persistentUrl']/."/> </xsl:attribute>
         <xsl:value-of select="concat(/map/string[@key='protocol']/.,':',/map/string[@key='authority']/.,'/',/map/string[@key='identifier']/.)"/>
-      </ddm:isVersionOf>
+      </ddm:isFormatOf>
       <!-- maybe also add handle as relation with link and dcterms:isVersionOf, then it becomes a clickable link in EASY ?  -->
 
       <!-- Note: Where do we put the version information; like V1 in the citation? -->
+      <ddm:relation>
+        <xsl:value-of select="/map/map/map[@key='metadataBlocks']/map[@key='citation']/array[@key='fields']/map/array/map/map[@key='publicationCitation']/string[@key='value']/."/>
+      </ddm:relation>
 
       <!--Geospatial-->
       <!--Country-->

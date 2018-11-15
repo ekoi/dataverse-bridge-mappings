@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files>
+   <file restricted="false"
+         size="10122004"
+         url="${dataverse.source.metadata.base.url}/datasets/export?exporter=dataverse_json&amp;persistentId=hdl:12345/OLXN2G">Metadata export from DataverseNL/hdl-12345-OLXN2G.json</file>
+   <file restricted="true"
+         size="110918"
+         url="${dataverse.source.metadata.base.url}/access/datafile/19?key=API-TOKEN">cover-achter.jpg</file>
+   <file restricted="false"
+         size="86394"
+         url="${dataverse.source.metadata.base.url}/access/datafile/20">cover-voor.jpg</file>
+</files>
