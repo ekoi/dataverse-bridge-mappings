@@ -51,9 +51,9 @@ public class MappingTest {
 
     @Test
     public void transformEasyXsl() throws IOException, SaxonApiException {
-        URL  dvnJsonToEasyDatasetXslUrl = new File("src/main/resources/xsl/dataverse/dataverseJson-to-easy-dataset.xsl").toURI().toURL();
-        URL dvnJsonToEasyFilesXslUrl = new File("src/main/resources/xsl/dataverse/dataverseJson-to-easy-files.xsl").toURI().toURL();
-        URL dvnJsonToSourceFilesLocationXslUrl = new File("src/main/resources/xsl/dataverse/dataverseJson-to-files-location.xsl").toURI().toURL();
+        URL  dvnJsonToEasyDatasetXslUrl = new File("src/main/resources/xsl/easy/dataverse/dataverseJson-to-easy-dataset.xsl").toURI().toURL();
+        URL dvnJsonToEasyFilesXslUrl = new File("src/main/resources/xsl/easy/dataverse/dataverseJson-to-easy-files.xsl").toURI().toURL();
+        URL dvnJsonToSourceFilesLocationXslUrl = new File("src/main/resources/xsl/easy/dataverse/dataverseJson-to-files-location.xsl").toURI().toURL();
 
         //Given
         File expectedEasyDatasetXmlFile = new File("src/test/resources/output/easy/hdl-101204-hkdsa-easy-dataset-expected.xml");
