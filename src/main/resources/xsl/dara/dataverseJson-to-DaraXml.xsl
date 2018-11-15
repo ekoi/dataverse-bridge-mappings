@@ -21,14 +21,13 @@
             <xsl:call-template name="dataURLs"/>
             <xsl:call-template name="doiProposal"/>
             <xsl:call-template name="publicationDate"/>
-            <xsl:call-template name="rights"/>
+            <availability><availabilityType>Delivery</availabilityType></availability>
             <xsl:call-template name="resourceLanguage"/>
+            <xsl:call-template name="rights"/>
             <xsl:call-template name="freeKeywords"/>
             <xsl:call-template name="descriptions"/>
             <xsl:call-template name="dataSets"/>
             <xsl:call-template name="publications"/>
-             
-      
         </resource>
     </xsl:template>
  
@@ -91,10 +90,18 @@
     </xsl:template>
    
     <xsl:template name="dataURLs" match="." xpath-default-namespace="http://www.w3.org/2005/xpath-functions">
+        <xsl:variable name="persistentUrl" select="//map[@key='data']/string[@key='persistentUrl']/."/>
         <dataURLs>
-            <dataURL>
-                <xsl:value-of select="//map[@key='data']/string[@key='persistentUrl']"/>
-            </dataURL>
+            <xsl:choose>
+                <xsl:when  test="$persistentUrl">
+                    <dataURL>
+                        <xsl:value-of select="//map[@key='data']/string[@key='persistentUrl']"/>
+                    </dataURL>
+                </xsl:when>
+                <xsl:otherwise>
+                    <dataURL>https://dataverse.nl/</dataURL>
+                </xsl:otherwise>
+            </xsl:choose>   
         </dataURLs>
     </xsl:template>
     
@@ -107,15 +114,21 @@
     </xsl:template>
 
     <xsl:template name="publicationDate" match="." xpath-default-namespace="http://www.w3.org/2005/xpath-functions">
-        <xsl:variable name="versionStateR" select="map[1]/map[1]/map[1]/string[@key='versionState']"/>
-        <xsl:if test="$versionStateR = 'RELEASED'">
-            <publicationDate>
-                <date>
-                    <xsl:value-of select="map[1]/map[1]/string[@key='publicationDate']"/>
-                </date>
-            </publicationDate>
-        </xsl:if>
-
+        <xsl:variable name="versionStateR" select="/map/map[@key='data']/string[@key='versionState']/."/>
+            <xsl:if test="$versionStateR = 'RELEASED'">
+                <publicationDate>
+                    <date>
+                        <xsl:value-of select="map[1]/map[1]/string[@key='publicationDate']"/>
+                    </date>
+                </publicationDate>
+            </xsl:if>
+            <xsl:if test="$versionStateR = 'DRAFT'">
+                <publicationDate>
+                    <date>
+                        <xsl:value-of select="format-dateTime(current-dateTime(), '[Y0001]-[M01]-[D01]')"/>
+                    </date>
+                </publicationDate>
+            </xsl:if>
     </xsl:template>
     <xsl:template name="rights" match="." xpath-default-namespace="http://www.w3.org/2005/xpath-functions">
         <xsl:variable name="versionStateR" select="map[1]/map[1]/map[1]/string[@key='versionState']"/>
@@ -140,9 +153,9 @@
    
    
     <xsl:template name="freeKeywords" match="." xpath-default-namespace="http://www.w3.org/2005/xpath-functions">
-        <freekywords>
-            <language>eng</language>
-            <keywordSchema>null</keywordSchema>
+        <freeKeywords>
+            <freeKeyword>
+            <language>en</language>
             <keywords>
                 <xsl:for-each select="//array[1]/map[6]/array[1]/map[*]/map[@key='keywordValue']">
                     <keyword>
@@ -150,7 +163,8 @@
                     </keyword>
                 </xsl:for-each>
             </keywords>
-        </freekywords>
+            </freeKeyword>
+        </freeKeywords>
     </xsl:template>
 
     <xsl:template name="descriptions" match="." xpath-default-namespace="http://www.w3.org/2005/xpath-functions">
@@ -194,18 +208,21 @@
                         <freetext>
                             <xsl:value-of select="map[@key='publicationCitation']/string[@key='value']"/>
                         </freetext>
+                        
+                        <xsl:variable name="pubIDNumber1" select="map[@key='publicationIDNumber']/string[@key='value']/."/>
+                		<xsl:if  test="$pubIDNumber1">
+                		<xsl:variable name="pubIDNumber" select="tokenize(map[@key='publicationIDNumber']/string[@key='value'], ':')"/>
                         <PIDs>
                             <PID>
-                                <xsl:variable name="pubIDNumber" select="tokenize(map[@key='publicationIDNumber']/string[@key='value'], '/')"/>
                                 <ID>
                                     <xsl:value-of select="$pubIDNumber[2]"/>
                                 </ID>
                                 <pidType>
                                     <xsl:value-of select="map[@key='publicationIDType']/string[@key='value']"/>
                                 </pidType>
-                            </PID>
-                                
+                            </PID>   
                         </PIDs>
+                        </xsl:if>
 
                     </unstructuredPublication>
                 </publication>
