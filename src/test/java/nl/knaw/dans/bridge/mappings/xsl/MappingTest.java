@@ -26,6 +26,9 @@ import static org.junit.Assert.assertTrue;
 import static org.powermock.api.mockito.PowerMockito.mockStatic;
 import static org.powermock.api.mockito.PowerMockito.when;
 
+/*
+Eko Indarto
+ */
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({BridgeHelper.class})
 public class MappingTest {

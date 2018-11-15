@@ -28,6 +28,6 @@ hs_err_pid*
 target
 dist
 notes.txt
-*.properties
+application*.properties
 *.tmp
 *.script
