@@ -40,12 +40,11 @@
                     <identifier>
                         <xsl:value-of select="map[1]/map[1]/string[@key='identifier']"/>
                     </identifier>
-                    <currentVersion/>
-                    <!--<xsl:variable name="versionNumber" select="map[1]/map[1]/map[1]/number[@key='versionNumber']"/>-->
-                    <!--<xsl:variable name="versionMinorNumber" select="map[1]/map[1]/map[1]/number[@key='versionMinorNumber']"/>-->
-                    <!--<currentVersion>-->
-                        <!--<xsl:value-of select="concat($versionNumber, '.', $versionMinorNumber)"/>-->
-                    <!--</currentVersion>-->
+                    <xsl:variable name="versionNumber" select="map[1]/map[1]/map[1]/number[@key='versionNumber']"/>
+                    <xsl:variable name="versionMinorNumber" select="map[1]/map[1]/map[1]/number[@key='versionMinorNumber']"/>
+                    <currentVersion>
+                        <xsl:value-of select="concat($versionNumber, '.', $versionMinorNumber)"/>
+                    </currentVersion>
                 </resourceIdentifier>
             </xsl:when>
             <xsl:otherwise>
@@ -53,6 +52,7 @@
                     <identifier>
                         <xsl:value-of select="map[1]/map[1]/number[@key='id']"/>
                     </identifier>
+                    <currentVersion/>
                 </resourceIdentifier>
             </xsl:otherwise>
         </xsl:choose>
