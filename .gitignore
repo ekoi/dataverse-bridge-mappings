@@ -31,3 +31,5 @@ notes.txt
 application*.properties
 *.tmp
 *.script
+
+src/test/resources/output/results
