@@ -22,9 +22,15 @@ import java.lang.invoke.MethodHandles;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 import static org.powermock.api.mockito.PowerMockito.mockStatic;
 import static org.powermock.api.mockito.PowerMockito.when;
+
 
 /*
 Eko Indarto
@@ -44,6 +50,8 @@ public class MappingTest {
     private static final String actualFilenameOfFilesLocationXml = resultsDir + "/hdl-101204-hkdsa-files-location-result.xml";
 
     private final XPath xPath = XPathFactory.newInstance().newXPath();
+
+    private static final String ENCODING = StandardCharsets.UTF_8.name();
 
     @BeforeClass
     public static void setUp() throws Exception {
@@ -67,12 +75,15 @@ public class MappingTest {
         LOG.info("actualEasyDatasetXml: \n{}", actualEasyDatasetXml);
         //Then
         File actualEasyDatasetXmlFile = new File(actualFilenameOfEasyDatasetXml);
-        FileUtils.writeStringToFile(actualEasyDatasetXmlFile, actualEasyDatasetXml, StandardCharsets.UTF_8.name());
+        FileUtils.writeStringToFile(actualEasyDatasetXmlFile, actualEasyDatasetXml, ENCODING);
 
-        // TODO implement compare that allows for known differences
-        // For developing the transform to the easy dataset.xml, uncomment the assertion and update yor xsl file until satisfied.
-        // The problem with dataset.xml construction is the dat available; <ddm:available> which is set to the current dat by the xsl and thus changes every day!
-        //assertTrue(FileUtils.contentEqualsIgnoreEOL(expectedEasyDatasetXmlFile, actualEasyDatasetXmlFile, StandardCharsets.UTF_8.name()));
+        // The problem with dataset.xml construction is the date available; <ddm:available> which is set to the current date by the xsl and thus changes every day!
+        // This is fixed by putting a placeholder in the expected xml file and replace it with the current dat string.
+        // When replacements like this need to be done for more xml elemens we might consider using a templating engine.
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        String currentDateStr = df.format(new Date());
+        assertEquals(FileUtils.readFileToString(expectedEasyDatasetXmlFile, ENCODING).replaceAll("\\{\\{ CURRENT_DATE \\}\\}", currentDateStr).trim(),
+        FileUtils.readFileToString(actualEasyDatasetXmlFile, ENCODING).trim());
 
         // Given
         File expectedEasyFilesXmlFile = new File("src/test/resources/output/easy/hdl-101204-hkdsa-easy-files-expected.xml");
@@ -81,8 +92,8 @@ public class MappingTest {
         LOG.info("actualEasyFilesXml: \n{}", actualEasyFilesXml);
         // Then
         File actualEasyFilesXmlFile = new File(actualFilenameOfEasyFilesXml);
-        FileUtils.writeStringToFile(actualEasyFilesXmlFile, actualEasyFilesXml, StandardCharsets.UTF_8.name());
-        assertTrue(FileUtils.contentEqualsIgnoreEOL(expectedEasyFilesXmlFile, actualEasyFilesXmlFile, StandardCharsets.UTF_8.name()));
+        FileUtils.writeStringToFile(actualEasyFilesXmlFile, actualEasyFilesXml, ENCODING);
+        assertTrue(FileUtils.contentEqualsIgnoreEOL(expectedEasyFilesXmlFile, actualEasyFilesXmlFile, ENCODING));
 
         // Given
         File expectedFilenameOfFilesLocationXml = new File("src/test/resources/output/easy/hdl-101204-hkdsa-files-location-expected.xml");
@@ -91,8 +102,8 @@ public class MappingTest {
         LOG.info("actualFilesLocationXml: \n{}", actualFilesLocationXml);
         // Then
         File actualFilenameOfFilesLocation = new File(actualFilenameOfFilesLocationXml);
-        FileUtils.writeStringToFile(actualFilenameOfFilesLocation, actualFilesLocationXml, StandardCharsets.UTF_8.name());
-        assertTrue(FileUtils.contentEqualsIgnoreEOL(expectedFilenameOfFilesLocationXml, actualFilenameOfFilesLocation, StandardCharsets.UTF_8.name()));
+        FileUtils.writeStringToFile(actualFilenameOfFilesLocation, actualFilesLocationXml, ENCODING);
+        assertTrue(FileUtils.contentEqualsIgnoreEOL(expectedFilenameOfFilesLocationXml, actualFilenameOfFilesLocation, ENCODING));
     }
 
     @Ignore
