@@ -29,7 +29,7 @@ je noemt elkaar eindelijk weer bij namen...&#xD;
          </dcx-dai:author>
       </dcx-dai:creatorDetails>
       <ddm:created>2018-11-08</ddm:created>
-      <ddm:available>2018-11-15</ddm:available>
+      <ddm:available>{{ CURRENT_DATE }}</ddm:available>
       <ddm:audience>D30000</ddm:audience>
       <ddm:audience>D60000</ddm:audience>
       <ddm:accessRights>OPEN_ACCESS</ddm:accessRights>
