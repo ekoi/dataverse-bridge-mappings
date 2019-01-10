@@ -5,6 +5,7 @@
          xmlns:ddm="http://easy.dans.knaw.nl/schemas/md/ddm/"
          xmlns:dcx-dai="http://easy.dans.knaw.nl/schemas/dcx/dai/"
          xmlns:mods="http://www.loc.gov/mods/v3"
+         xmlns:dcx-gml="http://easy.dans.knaw.nl/schemas/dcx/gml/"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns:id-type="http://easy.dans.knaw.nl/schemas/vocab/identifier-type/"
          xmlns:xs="http://www.w3.org/2001/XMLSchema">
@@ -20,7 +21,7 @@ je noemt elkaar eindelijk weer bij namen...&#xD;
 </dcterms:description>
       <dcx-dai:creatorDetails>
          <dcx-dai:author>
-            <dcx-dai:initials>A</dcx-dai:initials>
+            <dcx-dai:initials>Amal</dcx-dai:initials>
             <dcx-dai:insertions/>
             <dcx-dai:surname>Indarto</dcx-dai:surname>
             <dcx-dai:organization>
@@ -29,31 +30,34 @@ je noemt elkaar eindelijk weer bij namen...&#xD;
          </dcx-dai:author>
       </dcx-dai:creatorDetails>
       <ddm:created>2018-11-08</ddm:created>
-      <ddm:available>{{ CURRENT_DATE }}</ddm:available>
+      <ddm:available>2019-01-10</ddm:available>
       <ddm:audience>D30000</ddm:audience>
       <ddm:audience>D60000</ddm:audience>
       <ddm:accessRights>OPEN_ACCESS</ddm:accessRights>
    </ddm:profile>
    <ddm:dcmiMetadata>
+      <dcx-dai:contributorDetails>
+         <dcx-dai:author>
+            <dcx-dai:initials>Amal</dcx-dai:initials>
+            <dcx-dai:surname>Indarto</dcx-dai:surname>
+            <dcx-dai:role>ContactPerson</dcx-dai:role>
+         </dcx-dai:author>
+      </dcx-dai:contributorDetails>
       <dc:language>Dutch</dc:language>
       <dc:language>English</dc:language>
       <dcterms:license>CC0</dcterms:license>
       <dcterms:rightsHolder/>
-      <dc:subject>leaf</dc:subject>
-      <ddm:additional-xml>
-         <mods:recordInfo>
-            <mods:recordOrigin>Root</mods:recordOrigin>
-         </mods:recordInfo>
-      </ddm:additional-xml>
+      <ddm:subject valueURI="https://en.wikipedia.org/wiki/Leaf"
+                   subjectScheme="Plant morphology"
+                   schemeURI="https://en.wikipedia.org/wiki/">leaf</ddm:subject>
       <dc:type xsi:type="dcterms:DCMIType">Dataset</dc:type>
+      <dc:source/>
       <ddm:isFormatOf href="https://hdl.handle.net/12345/OLXN2G">hdl:12345/OLXN2G</ddm:isFormatOf>
-      <ddm:relation>https://www.amazon.de/Het-klavertje-dat-steeds-afbrak/dp/9082713403&#xD;
-https://www.ad.nl/eindhoven/twaalfjarige-amal-indarto-uit-eindhoven-schreef-eigen-boek~a2927976/</ddm:relation>
+      <ddm:isReferencedBy>https://www.amazon.de/Het-klavertje-dat-steeds-afbrak/dp/9082713403&#xD;
+https://www.ad.nl/eindhoven/twaalfjarige-amal-indarto-uit-eindhoven-schreef-eigen-boek~a2927976/</ddm:isReferencedBy>
       <dcterms:spatial/>
       <dcterms:spatial/>
       <dcterms:spatial/>
       <dcterms:spatial/>
-      <dcterms:spatial xsi:type="dcterms:Box">name=Western Australia; northlimit=-13.5; southlimit=-35.5; westlimit=112.5; eastlimit=129
-      </dcterms:spatial>
    </ddm:dcmiMetadata>
 </ddm:DDM>

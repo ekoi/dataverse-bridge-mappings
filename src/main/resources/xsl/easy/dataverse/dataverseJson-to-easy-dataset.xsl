@@ -5,6 +5,7 @@
         xmlns:ddm="http://easy.dans.knaw.nl/schemas/md/ddm/"
         xmlns:dcx-dai="http://easy.dans.knaw.nl/schemas/dcx/dai/"
         xmlns:mods="http://www.loc.gov/mods/v3"
+        xmlns:dcx-gml="http://easy.dans.knaw.nl/schemas/dcx/gml/"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns:id-type="http://easy.dans.knaw.nl/schemas/vocab/identifier-type/"
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -33,6 +34,11 @@
       <dc:title>
         <xsl:value-of select="//array[@key='fields']/map/string[@key='typeName' and text()='title']/following-sibling::string[@key='value']/."/>
       </dc:title>
+      <xsl:if test="//array[@key='fields']/map/string[@key='typeName' and text()='subtitle']/following-sibling::string[@key='value']/.">
+        <dcterms:alternative>
+          <xsl:value-of select="concat(//array[@key='fields']/map/string[@key='typeName' and text()='title']/following-sibling::string[@key='value']/., ' - ', //array[@key='fields']/map/string[@key='typeName' and text()='subtitle']/following-sibling::string[@key='value']/.)"/>
+        </dcterms:alternative>
+      </xsl:if>
       <dcterms:description>
         <xsl:value-of select="//map[@key='dsDescriptionValue']/string[@key='typeName' and text()='dsDescriptionValue']/following-sibling::string[@key='value']/."/>
       </dcterms:description>
@@ -43,7 +49,8 @@
           <dcx-dai:author>
             <!-- <dcx-dai:titles></dcx-dai:titles> -->
             <dcx-dai:initials>
-              <xsl:value-of select="substring($intial, 1, 1)"/>
+              <!--<xsl:value-of select="substring($intial, 1, 1)"/>-->
+              <xsl:value-of select="$intial"/>
             </dcx-dai:initials>
             <dcx-dai:insertions/>
             <dcx-dai:surname>
@@ -87,46 +94,69 @@
 
   <xsl:template name="dcmiMetadata">
     <ddm:dcmiMetadata>
-
+      <xsl:for-each select="//map[@key='datasetContactName']">
+        <dcx-dai:contributorDetails>
+          <dcx-dai:author>
+            <dcx-dai:initials><xsl:value-of select="substring-after(./string[@key='value']/.,', ')"/></dcx-dai:initials>
+            <dcx-dai:surname><xsl:value-of select="substring-before(./string[@key='value']/.,', ')"/></dcx-dai:surname>
+            <dcx-dai:role>ContactPerson</dcx-dai:role>
+          </dcx-dai:author>
+        </dcx-dai:contributorDetails>
+      </xsl:for-each>
       <xsl:for-each select="/map/map/map[@key='metadataBlocks']/map[@key='citation']/array[@key='fields']/map/string[@key='typeName' and text()='language']/following-sibling::array[@key='value']/string/.">
         <dc:language>
           <xsl:value-of select="."/>
         </dc:language>
       </xsl:for-each>
-      <!--<dc:license><xsl:value-of select="/map/map[@key='datasetVersion']/string[@key='license']/."/></dc:license>-->
-      <dcterms:license><xsl:value-of select="/map/map[@key='datasetVersion']/string[@key='license']/."/></dcterms:license>
+      <xsl:call-template name="opensourcelicense">
+        <xsl:with-param name="lic" select="normalize-space(/map/map[@key='datasetVersion']/string[@key='termsOfUse']/.)"/>
+      </xsl:call-template>
       <dcterms:rightsHolder/>
       <!-- list all keywords, even if allreay mapped to audience, because we have human readable Datavese specific text -->
       <xsl:for-each select="/map/map/map[@key='metadataBlocks']/map[@key='citation']/array[@key='fields']/map/string[@key='typeName' and text()='keyword']/following-sibling::array[@key='value']/map/.">
-        <dc:subject>
-          <xsl:value-of select="./map[@key='keywordValue']/string[@key='value']/."/>
-        </dc:subject>
+        <xsl:if test="not(empty(./map[@key='keywordVocabularyURI']/string[@key='value']/.) or empty(./map[@key='keywordVocabulary']/string[@key='value']/.))">
+          <ddm:subject>
+            <!--<xsl:attribute name="xml:lang">en</xsl:attribute>-->
+            <xsl:attribute name="valueURI"><xsl:value-of select="./map[@key='keywordVocabularyURI']/string[@key='value']/."/></xsl:attribute>
+            <xsl:attribute name="subjectScheme"><xsl:value-of select="./map[@key='keywordVocabulary']/string[@key='value']/."/></xsl:attribute>
+            <xsl:attribute name="schemeURI">https://en.wikipedia.org/wiki/</xsl:attribute><xsl:value-of select="./map[@key='keywordValue']/string[@key='value']/."/></ddm:subject>
+        </xsl:if>
       </xsl:for-each>
 
-      <ddm:additional-xml>
-        <mods:recordInfo>
-            <mods:recordOrigin><xsl:value-of select="/map/string[@key='publisher']/."/></mods:recordOrigin>
-        </mods:recordInfo>
-      </ddm:additional-xml>
-      <!-- Always a Dataset
-            We cannot be more specific, but maybe Collection might be semantically better? -->
+      <!-- see Laura email d.d. 19 Nov 2018 -->
+      <!--<ddm:additional-xml>-->
+      <!--<mods:recordInfo>-->
+      <!--<mods:recordOrigin><xsl:value-of select="/map/string[@key='publisher']/."/></mods:recordOrigin>-->
+      <!--</mods:recordInfo>-->
+      <!--</ddm:additional-xml>-->
+
       <dc:type xsi:type="dcterms:DCMIType">Dataset</dc:type>
 
+      <xsl:for-each select="/map/map/map[@key='metadataBlocks']/map[@key='citation']/array[@key='fields']/map/string[@key='typeName' and text()='relatedMaterial']/following-sibling::array[@key='value']/string/.">
+        <dc:relation><xsl:value-of select="."/></dc:relation>
+      </xsl:for-each>
+      <xsl:for-each select="/map/map/map[@key='metadataBlocks']/map[@key='citation']/array[@key='fields']/map/string[@key='typeName' and text()='relatedDatasets']/following-sibling::array[@key='value']/string/.">
+        <dc:relation><xsl:value-of select="."/></dc:relation>
+      </xsl:for-each>
+      <xsl:for-each select="/map/map/map[@key='metadataBlocks']/map[@key='citation']/array[@key='fields']/map/string[@key='typeName' and text()='otherReferences']/following-sibling::array[@key='value']/string/.">
+        <dc:relation><xsl:value-of select="."/></dc:relation>
+      </xsl:for-each>
+      <xsl:for-each select="/map/map/map[@key='metadataBlocks']/map[@key='citation']/array[@key='fields']/map/string[@key='typeName' and text()='dataSources']/following-sibling::array[@key='value']/string/.">
+        <dc:source><xsl:value-of select="."/></dc:source>
+      </xsl:for-each>
+      <dc:source><xsl:value-of select="/map/map/map[@key='metadataBlocks']/map[@key='citation']/array[@key='fields']/map/string[@key='typeName' and text()='originOfSources']/following-sibling::string[@key='value']/."/></dc:source>
 
-      <!-- TODO would like to have the handle (pid) here, would be very strange not to have it.
-          It points to the dataset in Dataverse which has all versions and not just the one deposited in EASY,
-          also it might be just a tumbstone. -->
+
       <ddm:isFormatOf>
         <xsl:attribute name="href"><xsl:value-of select="/map/string[@key='persistentUrl']/."/> </xsl:attribute>
         <xsl:value-of select="concat(/map/string[@key='protocol']/.,':',/map/string[@key='authority']/.,'/',/map/string[@key='identifier']/.)"/>
       </ddm:isFormatOf>
-      <!-- maybe also add handle as relation with link and dcterms:isVersionOf, then it becomes a clickable link in EASY ?  -->
 
-      <!-- Note: Where do we put the version information; like V1 in the citation? -->
-      <ddm:relation>
-        <xsl:value-of select="/map/map/map[@key='metadataBlocks']/map[@key='citation']/array[@key='fields']/map/array/map/map[@key='publicationCitation']/string[@key='value']/."/>
-      </ddm:relation>
-
+      <xsl:if test="/map/map/map[@key='metadataBlocks']/map[@key='citation']/array[@key='fields']/map/array/map/map[@key='publicationCitation']">
+        <ddm:isReferencedBy>
+          <xsl:value-of select="/map/map/map[@key='metadataBlocks']/map[@key='citation']/array[@key='fields']/map/array/map/map[@key='publicationCitation']/string[@key='value']/."/>
+        </ddm:isReferencedBy>
+      </xsl:if>
       <!--Geospatial-->
       <!--Country-->
       <dcterms:spatial>
@@ -145,8 +175,16 @@
         <xsl:value-of select="/map/map/map[@key='metadataBlocks']/map[@key='geospatial']/array/map/array[@key='value']/map/map[@key='otherGeographicCoverage']/string[@key='value']/."/>
       </dcterms:spatial>
 
-      <dcterms:spatial xsi:type="dcterms:Box">name=Western Australia; northlimit=-13.5; southlimit=-35.5; westlimit=112.5; eastlimit=129
-      </dcterms:spatial>
+      <xsl:if test="/map/map/map[@key='metadataBlocks']/map[@key='geospatial']/array/map/string[@key='typeName' and text()='geographicBoundingBox']/following-sibling::array[@key='value']/map/.">
+        <dcx-gml:spatial>
+          <boundedBy xmlns="http://www.opengis.net/gml">
+            <Envelope srsName="http://www.opengis.net/def/crs/EPSG/0/28992">
+              <lowerCorner><xsl:value-of select="concat(//map[@key='eastLongitude']/string[@key='value']/., ' ',//map[@key='southLongitude']/string[@key='value']/.)"/></lowerCorner>
+              <upperCorner><xsl:value-of select="concat(//map[@key='westLongitude']/string[@key='value']/., ' ',//map[@key='northLongitude']/string[@key='value']/.)"/></upperCorner>
+            </Envelope>
+          </boundedBy>
+        </dcx-gml:spatial>
+      </xsl:if>
 
     </ddm:dcmiMetadata>
   </xsl:template>
@@ -155,7 +193,7 @@
     <xsl:param name="val"/>
     <!-- make our own map, it's small -->
     <xsl:choose>
-      <xsl:when test="$val = 'Agricultural sciences'">
+      <xsl:when test="$val = 'Agricultural Sciences'">
         <xsl:value-of select="'D18000'"/>
       </xsl:when>
       <xsl:when test="$val = 'Law'">
@@ -200,6 +238,28 @@
       <xsl:otherwise>
         <!-- Don't do the default mapping to E10000, otherwise we cannot detect that nothing was found -->
         <xsl:value-of select="''"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+  <xsl:template name="opensourcelicense">
+    <xsl:param name="lic"/>
+    <xsl:choose>
+      <xsl:when test="($lic = 'http://creativecommons.org/publicdomain/zero/1.0') or
+                      ($lic = 'http://creativecommons.org/licenses/by/4.0') or
+                      ($lic = 'http://creativecommons.org/licenses/by-nc-sa/3.0') or
+                      ($lic = 'http://creativecommons.org/licenses/by-nc/3.0') or
+                      ($lic = 'http://opensource.org/licenses/MIT') or
+                      ($lic = 'http://www.apache.org/licenses/LICENSE-2.0') or
+                      ($lic = 'http://opensource.org/licenses/BSD-3-Clause') or
+                      ($lic = 'http://opensource.org/licenses/BSD-2-Clause') or
+                      ($lic = 'http://www.gnu.org/licenses/gpl-3.0.en.html') or
+                      ($lic = 'http://www.ohwr.org/attachments/2388/cern_ohl_v_1_2.txt') or
+                      ($lic = 'http://www.ohwr.org/attachments/735/CERNOHLv1_1.txt') or
+                      ($lic = 'http://www.tapr.org/TAPR_Open_Hardware_License_v1.0.txt')">
+        <dcterms:license><xsl:value-of select="$lic"/></dcterms:license>
+      </xsl:when>
+      <xsl:otherwise>
+        <dcterms:license><xsl:value-of select="/map/map[@key='datasetVersion']/string[@key='license']/."/></dcterms:license>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
