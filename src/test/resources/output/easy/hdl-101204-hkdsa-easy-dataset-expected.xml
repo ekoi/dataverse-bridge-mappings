@@ -30,10 +30,10 @@ je noemt elkaar eindelijk weer bij namen...&#xD;
          </dcx-dai:author>
       </dcx-dai:creatorDetails>
       <ddm:created>2018-11-08</ddm:created>
-      <ddm:available>2019-01-10</ddm:available>
+      <ddm:available>{{ CURRENT_DATE }}</ddm:available>
       <ddm:audience>D30000</ddm:audience>
       <ddm:audience>D60000</ddm:audience>
-      <ddm:accessRights>OPEN_ACCESS</ddm:accessRights>
+      <ddm:accessRights>REQUEST_PERMISSION</ddm:accessRights>
    </ddm:profile>
    <ddm:dcmiMetadata>
       <dcx-dai:contributorDetails>
@@ -49,7 +49,7 @@ je noemt elkaar eindelijk weer bij namen...&#xD;
       <dcterms:rightsHolder/>
       <ddm:subject valueURI="https://en.wikipedia.org/wiki/Leaf"
                    subjectScheme="Plant morphology"
-                   schemeURI="https://en.wikipedia.org/wiki/">leaf</ddm:subject>
+                   schemeURI="https://en.wikipedia.org/wiki/Leaf">leaf</ddm:subject>
       <dc:type xsi:type="dcterms:DCMIType">Dataset</dc:type>
       <dc:source/>
       <ddm:isFormatOf href="https://hdl.handle.net/12345/OLXN2G">hdl:12345/OLXN2G</ddm:isFormatOf>

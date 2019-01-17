@@ -23,12 +23,12 @@
     <xsl:apply-templates select="json-to-xml($dvnJson)"/>
   </xsl:template>
   <!--[@key='typeName' and text()='title']-->
-  <xsl:template match="/">
-    <ddm:DDM>
-      <xsl:call-template name="profile"/>
-      <xsl:call-template name="dcmiMetadata"/>
-    </ddm:DDM>
-  </xsl:template>
+    <xsl:template match="/">
+      <ddm:DDM>
+        <xsl:call-template name="profile"/>
+        <xsl:call-template name="dcmiMetadata"/>
+      </ddm:DDM>
+    </xsl:template>
   <xsl:template name="profile">
     <ddm:profile>
       <dc:title>
@@ -42,7 +42,7 @@
       <dcterms:description>
         <xsl:value-of select="//map[@key='dsDescriptionValue']/string[@key='typeName' and text()='dsDescriptionValue']/following-sibling::string[@key='value']/."/>
       </dcterms:description>
-      <xsl:for-each select="//map[@key='authorName']">
+      <xsl:for-each select="//map/array[@key='value']/map/map[@key='authorName']">
         <xsl:variable name="intial" select="substring-after(./string[@key='typeName' and text()='authorName']/following-sibling::string[@key='value']/., ', ')"/>
         <xsl:variable name="surname" select="substring-before(./string[@key='typeName' and text()='authorName']/following-sibling::string[@key='value']/., ', ')"/>
         <dcx-dai:creatorDetails>
@@ -58,7 +58,7 @@
             </dcx-dai:surname>
             <dcx-dai:organization>
               <dcx-dai:name xml:lang="en">
-                <xsl:value-of select="//string[@key='typeName' and text()='authorAffiliation']/following-sibling::string[@key='value']/."/>
+                <xsl:value-of select="./parent::*//map[@key='authorAffiliation']/string[@key='value']/."/>
               </dcx-dai:name>
             </dcx-dai:organization>
           </dcx-dai:author>
@@ -88,7 +88,26 @@
           </ddm:audience>
         </xsl:if>
       </xsl:for-each>
-      <ddm:accessRights>OPEN_ACCESS</ddm:accessRights>
+      <xsl:choose>
+        <xsl:when test="count(/map/map/array/map[boolean='true']) = 0">
+        	<ddm:accessRights>OPEN_ACCESS</ddm:accessRights>
+	</xsl:when>
+        <xsl:otherwise>
+         <ddm:accessRights>REQUEST_PERMISSION</ddm:accessRights>
+        </xsl:otherwise>
+      </xsl:choose>
+
+      <!--<xsl:for-each select="//map[@key='datasetVersion']/array[@key='files']/map">-->
+        <!--<xsl:choose>-->
+          <!--<xsl:when test="./boolean[@key='restricted']/. = 'true'">-->
+            <!--<dcterms:accessibleToRights>RESTRICTED_REQUEST</dcterms:accessibleToRights>-->
+          <!--</xsl:when>-->
+          <!--<xsl:otherwise>-->
+            <!--<dcterms:accessibleToRights>OPEN_ACCESS</dcterms:accessibleToRights>-->
+          <!--</xsl:otherwise>-->
+        <!--</xsl:choose>-->
+      <!--</xsl:for-each>-->
+
     </ddm:profile>
   </xsl:template>
 
@@ -114,13 +133,13 @@
       <dcterms:rightsHolder/>
       <!-- list all keywords, even if allreay mapped to audience, because we have human readable Datavese specific text -->
       <xsl:for-each select="/map/map/map[@key='metadataBlocks']/map[@key='citation']/array[@key='fields']/map/string[@key='typeName' and text()='keyword']/following-sibling::array[@key='value']/map/.">
-        <xsl:if test="not(empty(./map[@key='keywordVocabularyURI']/string[@key='value']/.) or empty(./map[@key='keywordVocabulary']/string[@key='value']/.))">
+        <!--<xsl:if test="not(empty(./map[@key='keywordVocabularyURI']/string[@key='value']/.) or empty(./map[@key='keywordVocabulary']/string[@key='value']/.))">-->
           <ddm:subject>
             <!--<xsl:attribute name="xml:lang">en</xsl:attribute>-->
             <xsl:attribute name="valueURI"><xsl:value-of select="./map[@key='keywordVocabularyURI']/string[@key='value']/."/></xsl:attribute>
             <xsl:attribute name="subjectScheme"><xsl:value-of select="./map[@key='keywordVocabulary']/string[@key='value']/."/></xsl:attribute>
-            <xsl:attribute name="schemeURI">https://en.wikipedia.org/wiki/</xsl:attribute><xsl:value-of select="./map[@key='keywordValue']/string[@key='value']/."/></ddm:subject>
-        </xsl:if>
+            <xsl:attribute name="schemeURI"><xsl:value-of select="./map[@key='keywordVocabularyURI']/string[@key='value']/."/></xsl:attribute><xsl:value-of select="./map[@key='keywordValue']/string[@key='value']/."/></ddm:subject>
+        <!--</xsl:if>-->
       </xsl:for-each>
 
       <!-- see Laura email d.d. 19 Nov 2018 -->
@@ -256,7 +275,7 @@
                       ($lic = 'http://www.ohwr.org/attachments/2388/cern_ohl_v_1_2.txt') or
                       ($lic = 'http://www.ohwr.org/attachments/735/CERNOHLv1_1.txt') or
                       ($lic = 'http://www.tapr.org/TAPR_Open_Hardware_License_v1.0.txt')">
-        <dcterms:license><xsl:value-of select="$lic"/></dcterms:license>
+        <dcterms:license xsi:type="dcterms:URI"><xsl:value-of select="$lic"/></dcterms:license>
       </xsl:when>
       <xsl:otherwise>
         <dcterms:license><xsl:value-of select="/map/map[@key='datasetVersion']/string[@key='license']/."/></dcterms:license>
